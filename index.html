@@ -12,7 +12,7 @@
 
     <div id="app_ins" class="bg-purple-700 p-5 min-h-screen flex flex-col items-center justify-start">
 
-        <ul class="nav flex justify-around items-center border-t w-full h-0 relative my-14">
+        <ul class="nav flex justify-around items-center border-t w-full h-0 relative mt-7 mb-14">
             <li v-on:click="form_step=1" class="step">
                 <span class="step_number">1</span>
                 <span class="step_title">Vehicle Details</span>
@@ -23,11 +23,9 @@
             </li>
         </ul>
 
+        <form action="#" class="w-full" method="get">
 
-
-        <form class="w-full bg-white p-5 rounded-sm shadow-md" action="#" method="get">
-
-            <div v-show="form_step==1" class="section_1">
+            <div v-show="form_step==1" class="section">
 
                 <Vselect :value="vehicleUsages" error="vehicleUsage" title="Vehicle Usage" v-model="vehicleUsage">
                 </Vselect>
@@ -46,13 +44,13 @@
                 </div>
             </div>
 
-            <div v-show="form_step==2" class="section_2">
+            <div v-show="form_step==2" class="section">
 
                 <Vpackges></Vpackges>
 
             </div>
 
-            <div v-show="form_step==3" class="section_3 relative min-h-[35vh]">
+            <div v-show="form_step==3" class="relative w-11/12 left-8">
 
                 <ul class="sub-navi">
                     <li v-on:click="form_sub_step=1" v-bind:class="{active:form_sub_step==1}">1</li>
@@ -63,7 +61,7 @@
 
                 <div class="sub-details">
 
-                    <div v-show="form_sub_step==1" class="group-1">
+                    <div v-show="form_sub_step==1" class="section">
 
                         <h2 class="title font-bold mb-4 uppercase">Insured Details</h2>
 
@@ -91,7 +89,7 @@
 
                     </div>
 
-                    <div v-show="form_sub_step==2" class="group-2">
+                    <div v-show="form_sub_step==2" class="section">
 
                         <h2 class="title font-bold mb-4 uppercase">Identification</h2>
 
@@ -124,7 +122,7 @@
                     </div>
 
 
-                    <div v-show="form_sub_step==3" class="group-3">
+                    <div v-show="form_sub_step==3" class="section">
 
                         <h2 class="title font-bold mb-4 uppercase">Vehical Details</h2>
 
@@ -158,7 +156,7 @@
 
                     </div>
 
-                    <div v-show="form_sub_step==4" class="group-4">
+                    <div v-show="form_sub_step==4" class="section">
 
                         <h2 class="title font-bold mb-4 uppercase">DECLARATION</h2>
 
@@ -185,7 +183,7 @@
 
                     </div>
 
-                    <div v-show="form_sub_step==5" class="group-5">
+                    <div v-show="form_sub_step==5" class="section">
 
                         <h2 class="title mb-4 uppercase">Check all details provided below to ensure they are all
                             correct.</h2>
